@@ -1,0 +1,32 @@
+<div class="card mb-5 mb-lg-0  m-4 ">
+                  <div class="card-body">
+                    <h5 class="card-title text-muted text-uppercase text-center">{{ pricelist.plan }}</h5>
+                    <h6 class="card-price text-center"><span class="price">${{pricelist.price}}</span><span class="period">/month</span></h6>
+                    <hr>
+                    <ul class="fa-ul list-unstyled">
+                      <li [ngClass]="{'textBold':pricelist.plan=='PLUS' || pricelist.plan=='PRO'}"> <span> &#10004;</span> {{pricelist.user}} </li>
+                      <li><span> &#10004;</span>{{pricelist.storage}} GB Storage</li>
+                      <li><span> &#10004;</span>Unlimited Public Projects</li>
+                      <li><span> &#10004;</span> Community Access</li>
+                      <li class="" [ngClass]="{'reject':pricelist.privateProjects==false}"><span *ngIf="pricelist.privateProjects==false">&#10006;</span>
+                        <span *ngIf="pricelist.privateProjects==true">&#10004;</span>
+                        Unlimited Private Projects</li>
+                        
+                      <li class="" [ngClass]="{'reject':pricelist.phoneSupport==false}"><span *ngIf="pricelist.phoneSupport==false">&#10006;</span>
+                        <span *ngIf="pricelist.phoneSupport==true">&#10004;</span>
+                        Dedicated Phone Support</li>
+                      <li class="" [ngClass]="{'reject':pricelist.freeSubdomain==false}"><span *ngIf="pricelist.phoneSupport==false">&#10006;</span>
+                        <span *ngIf="pricelist.phoneSupport==true">&#10004;</span>
+                        
+                      <span *ngIf="pricelist.plan=='PRO'"> <b>Unlimited</b></span>  Free Subdomain
+                      </li>
+                      <li class="" [ngClass]="{'reject':pricelist.monthlyReport==false}">
+                        <span *ngIf="pricelist.monthlyReport==false">&#10006;</span>
+                        <span *ngIf="pricelist.monthlyReport==true">&#10004;</span>
+                        Monthly Status Reports</li>
+                    </ul>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-primary text-uppercase">Button</a>
+                    </div>
+                  </div>
+                </div>
